@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1280" width="1000" height="1280" font-family="-apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="dep" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#222"/>
+    </marker>
+    <marker id="dep-green" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2e7d32"/>
+    </marker>
+    <marker id="inh" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="13" markerHeight="13" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1,1 L11,6 L1,11 z" fill="#fff" stroke="#222" stroke-width="1.2"/>
+    </marker>
+    <marker id="inh-green" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="13" markerHeight="13" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1,1 L11,6 L1,11 z" fill="#fff" stroke="#2e7d32" stroke-width="1.2"/>
+    </marker>
+    <marker id="inh-lilac" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="13" markerHeight="13" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1,1 L11,6 L1,11 z" fill="#fff" stroke="#8c7fdb" stroke-width="1.2"/>
+    </marker>
+    <style>
+      .box { fill: #fff; stroke: #222; stroke-width: 1.4; }
+      .box-g { fill: #fff; stroke: #2e7d32; stroke-width: 1.4; }
+      .iface { fill: #fff; stroke: #222; stroke-width: 1.4; stroke-dasharray: 7 5; }
+      .iface-g { fill: #fff; stroke: #2e7d32; stroke-width: 1.4; stroke-dasharray: 7 5; }
+      .fake { fill: #fff; stroke: #8c7fdb; stroke-width: 1.4; stroke-dasharray: 7 5; }
+      .frame { fill: none; stroke: #222; stroke-width: 1.2; }
+      .frame-g { fill: none; stroke: #2e7d32; stroke-width: 1.2; }
+      .dep { stroke: #222; stroke-width: 1.3; fill: none; marker-end: url(#dep); }
+      .own { stroke: #2e7d32; stroke-width: 1.6; fill: none; marker-end: url(#dep-green); }
+      .inh { stroke: #2e7d32; stroke-width: 1.3; fill: none; marker-end: url(#inh-green); }
+      .impl { stroke: #222; stroke-width: 1.3; fill: none; stroke-dasharray: 5 4; marker-end: url(#inh); }
+      .impl-g { stroke: #2e7d32; stroke-width: 1.3; fill: none; stroke-dasharray: 5 4; marker-end: url(#inh-green); }
+      .impl-l { stroke: #8c7fdb; stroke-width: 1.3; fill: none; stroke-dasharray: 5 4; marker-end: url(#inh-lilac); }
+      .title { font-size: 15px; font-weight: 600; fill: #222; text-anchor: middle; }
+      .title-g { font-size: 15px; font-weight: 600; fill: #1b5e20; text-anchor: middle; }
+      .leaf { font-size: 12px; fill: #1b5e20; text-anchor: middle; }
+      .m { font-size: 12px; fill: #222; }
+      .m-g { font-size: 12px; fill: #1b5e20; }
+      .lbl { font-size: 12px; fill: #222; paint-order: stroke; stroke: #fff; stroke-width: 4px; }
+      .lbl-g { font-size: 12px; fill: #2e7d32; paint-order: stroke; stroke: #fff; stroke-width: 4px; }
+      .note { font-size: 12px; fill: #1e6fd9; }
+      .note-g { font-size: 12px; fill: #2e7d32; }
+      .frame-lbl { font-size: 13px; fill: #222; }
+      .frame-lbl-g { font-size: 13px; fill: #2e7d32; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="1280" fill="#fff"/>
+
+  <!-- DI ~ main -->
+  <rect class="box" x="640" y="20" width="80" height="40"/>
+  <text class="title" x="680" y="45">DI</text>
+  <path d="M600,95 q8,-12 16,-8 t16,-8 t16,-8 t16,-8" fill="none" stroke="#222" stroke-width="1.3"/>
+
+  <rect class="box" x="430" y="95" width="200" height="70"/>
+  <text class="title" x="530" y="135">main</text>
+
+  <!-- Legend -->
+  <rect class="box" x="740" y="165" width="210" height="95"/>
+  <line x1="755" y1="190" x2="800" y2="190" class="dep"/>
+  <text class="m" x="810" y="194">— зависимость</text>
+  <line x1="755" y1="215" x2="800" y2="215" stroke="#222" stroke-width="1.3" marker-end="url(#inh)"/>
+  <text class="m" x="810" y="219">— наследование</text>
+  <line x1="755" y1="240" x2="800" y2="240" stroke="#222" stroke-width="1.3" stroke-dasharray="5 4" marker-end="url(#inh)"/>
+  <text class="m" x="810" y="244">— интерфейс</text>
+
+  <!-- App -->
+  <line x1="530" y1="165" x2="530" y2="225" class="dep"/>
+  <rect class="box" x="430" y="225" width="200" height="80"/>
+  <text class="title" x="530" y="255">App</text>
+  <text class="m" x="445" y="282">• консольный функционал</text>
+
+  <!-- App dependencies -->
+  <line x1="470" y1="305" x2="345" y2="375" class="dep"/>
+  <text class="lbl" x="392" y="335">&amp;</text>
+  <line x1="530" y1="305" x2="530" y2="375" class="dep"/>
+  <text class="lbl" x="538" y="330">const &amp;</text>
+  <line x1="610" y1="305" x2="775" y2="375" class="dep"/>
+  <text class="lbl" x="690" y="330">const &amp;</text>
+
+  <!-- Services frame -->
+  <rect class="frame" x="180" y="345" width="760" height="420"/>
+  <text class="frame-lbl" x="188" y="362">services</text>
+  <text class="frame-lbl" x="188" y="378">библ.</text>
+
+  <!-- Intake -->
+  <rect class="box" x="225" y="375" width="170" height="85"/>
+  <text class="title" x="310" y="400">Intake</text>
+  <text class="m" x="238" y="424">• register()</text>
+  <text class="m" x="238" y="444">• accept()</text>
+
+  <!-- FleetRep. -->
+  <text class="note" x="575" y="369">* чтение</text>
+  <rect class="box" x="445" y="375" width="170" height="95"/>
+  <text class="title" x="530" y="400">FleetRep.</text>
+  <text class="m" x="458" y="422">• Summary()</text>
+  <text class="m" x="458" y="440">• beg. Friendly()</text>
+  <text class="m" x="458" y="458">• inventory()</text>
+
+  <!-- Veh. factory -->
+  <rect class="box" x="715" y="375" width="190" height="95"/>
+  <text class="title" x="810" y="400">Veh. factory</text>
+  <text class="m" x="728" y="422">• create()</text>
+  <text class="m" x="728" y="440">• types()</text>
+  <text class="m" x="728" y="458">• contains()</text>
+  <text class="m" x="815" y="440">• registerT()</text>
+
+  <!-- Inspection service -->
+  <line x1="310" y1="460" x2="310" y2="510" class="dep"/>
+  <text class="lbl" x="318" y="490">const &amp;</text>
+  <text class="note" x="330" y="504">* интерфейс</text>
+  <rect class="iface" x="225" y="510" width="170" height="75"/>
+  <text class="title" x="310" y="535">Inspection service</text>
+  <text class="m" x="238" y="560">• inspect()</text>
+
+  <!-- Fleet -->
+  <line x1="395" y1="445" x2="475" y2="510" class="dep"/>
+  <text class="lbl" x="418" y="492">&amp;</text>
+  <line x1="530" y1="470" x2="530" y2="510" class="dep"/>
+  <text class="lbl" x="538" y="494">const &amp;</text>
+  <rect class="box-g" x="445" y="510" width="170" height="75"/>
+  <text class="title-g" x="530" y="535">Fleet</text>
+  <text class="m-g" x="458" y="558">• addVeh()</text>
+  <text class="m-g" x="458" y="576">• addItem()</text>
+  <text class="m-g" x="545" y="558">• veh()</text>
+  <text class="m-g" x="545" y="576">• items()</text>
+
+  <!-- Beg. policy -->
+  <line x1="600" y1="470" x2="690" y2="510" class="dep"/>
+  <text class="lbl" x="648" y="484">const &amp;</text>
+  <rect class="box" x="665" y="510" width="160" height="75"/>
+  <text class="title" x="745" y="535">Beg. policy</text>
+  <text class="m" x="678" y="560">• isSuitable()</text>
+
+  <!-- ServiceCenter -->
+  <rect class="box" x="225" y="650" width="170" height="60"/>
+  <text class="title" x="310" y="685">ServiceCenter</text>
+  <line x1="310" y1="650" x2="310" y2="585" class="impl"/>
+
+  <!-- Fake Inspection -->
+  <rect class="fake" x="20" y="515" width="130" height="70"/>
+  <text x="85" y="540" font-size="14" font-weight="600" fill="#6a5cc9" text-anchor="middle">Fake Inspection</text>
+  <line x1="150" y1="555" x2="225" y2="555" class="impl-l"/>
+
+  <!-- Ownership: Fleet -> Equipment -->
+  <line x1="530" y1="585" x2="530" y2="800" class="own"/>
+  <text class="lbl-g" x="540" y="700" font-weight="600">Владение</text>
+  <text class="lbl-g" x="540" y="718">un. ptr &lt;Vehicle&gt;</text>
+  <text class="lbl-g" x="540" y="734">un. ptr &lt;Item&gt;</text>
+
+  <!-- Veh. factory -> Equipment -->
+  <line x1="880" y1="470" x2="880" y2="800" class="dep"/>
+  <text class="lbl" x="870" y="680" text-anchor="end">create</text>
+  <text class="lbl" x="870" y="698" text-anchor="end">unique_ptr&lt;Vehicle&gt;</text>
+
+  <!-- Equipment frame -->
+  <rect class="frame-g" x="180" y="800" width="760" height="450"/>
+  <text class="frame-lbl-g" x="188" y="818">Equipment</text>
+
+  <!-- IInventoriable -->
+  <rect class="box-g" x="445" y="835" width="190" height="75"/>
+  <text class="title-g" x="540" y="860">IInventoriable</text>
+  <text class="m-g" x="458" y="882">• name</text>
+  <text class="m-g" x="458" y="900">• number</text>
+
+  <!-- Vehicle -->
+  <rect class="box-g" x="265" y="965" width="120" height="110"/>
+  <text class="title-g" x="325" y="988">Vehicle</text>
+  <text class="m-g" x="276" y="1010">• title(kind)</text>
+  <text class="m-g" x="276" y="1028">• nickname</text>
+  <text class="m-g" x="276" y="1046">• simple</text>
+  <text class="m-g" x="276" y="1064">• wear</text>
+  <line x1="385" y1="975" x2="470" y2="910" class="inh"/>
+
+  <!-- Item -->
+  <rect class="box-g" x="700" y="950" width="110" height="55"/>
+  <text class="title-g" x="755" y="983">Item</text>
+  <line x1="730" y1="950" x2="615" y2="910" class="inh"/>
+
+  <!-- Energy consumer -->
+  <text class="note-g" x="465" y="1037">* интерфейс</text>
+  <rect class="iface-g" x="465" y="1045" width="140" height="55"/>
+  <text class="title-g" x="535" y="1067" font-size="14">Energy consumer</text>
+  <text class="m-g" x="477" y="1088">• d. EnergyKwh</text>
+
+  <!-- El. Item -->
+  <rect class="box-g" x="640" y="1050" width="85" height="45"/>
+  <text class="title-g" x="682" y="1077" font-size="14">El. Item</text>
+  <line x1="705" y1="1050" x2="740" y2="1005" class="inh"/>
+  <line x1="640" y1="1072" x2="605" y2="1072" class="impl-g"/>
+
+  <!-- helmet -->
+  <ellipse cx="785" cy="1085" rx="32" ry="17" fill="#fff" stroke="#2e7d32" stroke-width="1.3"/>
+  <text class="leaf" x="785" y="1089">helmet</text>
+  <line x1="785" y1="1068" x2="785" y2="1005" class="inh"/>
+
+  <!-- Vehicle subclasses -->
+  <ellipse cx="225" cy="1130" rx="36" ry="16" fill="#fff" stroke="#2e7d32" stroke-width="1.3"/>
+  <text class="leaf" x="225" y="1134">Scooter</text>
+  <line x1="235" y1="1114" x2="285" y2="1075" class="inh"/>
+
+  <ellipse cx="320" cy="1130" rx="34" ry="16" fill="#fff" stroke="#2e7d32" stroke-width="1.3"/>
+  <text class="leaf" x="320" y="1134">Bicycle</text>
+  <line x1="320" y1="1114" x2="322" y2="1075" class="inh"/>
+
+  <ellipse cx="410" cy="1130" rx="34" ry="16" fill="#fff" stroke="#2e7d32" stroke-width="1.3"/>
+  <text class="leaf" x="410" y="1134">Electric</text>
+  <line x1="402" y1="1114" x2="365" y2="1075" class="inh"/>
+  <line x1="442" y1="1122" x2="490" y2="1100" class="impl-g"/>
+
+  <ellipse cx="365" cy="1200" rx="42" ry="16" fill="#fff" stroke="#2e7d32" stroke-width="1.3"/>
+  <text class="leaf" x="365" y="1204">El. scooter</text>
+  <line x1="375" y1="1184" x2="400" y2="1146" class="inh"/>
+
+  <ellipse cx="465" cy="1200" rx="40" ry="16" fill="#fff" stroke="#2e7d32" stroke-width="1.3"/>
+  <text class="leaf" x="465" y="1204">El. bicycle</text>
+  <line x1="455" y1="1184" x2="422" y2="1146" class="inh"/>
+
+  <!-- El. Item subclasses -->
+  <ellipse cx="595" cy="1175" rx="44" ry="16" fill="#fff" stroke="#2e7d32" stroke-width="1.3"/>
+  <text class="leaf" x="595" y="1179">Dock Station</text>
+  <line x1="610" y1="1159" x2="660" y2="1095" class="inh"/>
+
+  <ellipse cx="710" cy="1175" rx="48" ry="16" fill="#fff" stroke="#2e7d32" stroke-width="1.3"/>
+  <text class="leaf" x="710" y="1179">Charging cab.</text>
+  <line x1="705" y1="1159" x2="700" y2="1095" class="inh"/>
+</svg>

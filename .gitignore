@@ -1,0 +1,15 @@
+# Build
+build/
+build-*/
+cmake-build-*/
+
+# IDE
+.idea/
+.vscode/
+
+# Coverage
+*.profraw
+*.profdata
+
+# macOS
+.DS_Store
